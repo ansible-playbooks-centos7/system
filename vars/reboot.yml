@@ -1,0 +1,2 @@
+# The number of seconds to wait for a connection to open after Ansible rebooting the system
+reboot_timeout: 60
