@@ -1,12 +1,10 @@
 - name: Apply package updates
-  become: yes
   yum:
     name: "*"
     state: latest
   register: SYSTEM_UPDATED
 
 - name: Reboot the system
-  become: yes
   include_role:
     name: reboot
   when: SYSTEM_UPDATED is changed

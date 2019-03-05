@@ -1,5 +1,4 @@
 - name: Reboot the system
-  become: yes
   shell: /sbin/shutdown -r
   async: 1
   poll: 0
@@ -9,7 +8,7 @@
   become: no
   local_action: wait_for
   args:
-    host: "{{ inventory_hostname }}"
+    host: '{{ ansible_host }}'
     state: stopped
     port: '{{ ansible_port }}'
 
@@ -17,6 +16,6 @@
   become: no
   local_action: wait_for
   args:
-    host: "{{ inventory_hostname }}"
+    host: '{{ ansible_host }}'
     state: started
     timeout: '{{ reboot_timeout }}'
