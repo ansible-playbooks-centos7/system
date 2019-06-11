@@ -1,21 +1,2 @@
-- name: Reboot the system
-  shell: /sbin/shutdown -r
-  async: 1
-  poll: 0
-  ignore_errors: yes
-
-- name: Wait for sshd to stop
-  become: no
-  local_action: wait_for
-  args:
-    host: '{{ ansible_host }}'
-    state: stopped
-    port: '{{ ansible_port }}'
-
-- name: Wait for the reboot to complete
-  become: no
-  local_action: wait_for
-  args:
-    host: '{{ ansible_host }}'
-    state: started
-    timeout: '{{ reboot_timeout }}'
+- name: Unconditionally reboot the machine with all defaults
+  reboot:
