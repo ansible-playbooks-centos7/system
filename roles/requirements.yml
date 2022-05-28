@@ -1,0 +1,4 @@
+---
+roles:
+  - name: mamono210.centos_update
+    src: https://github.com/ansible-roles-mamono210/centos_update.git
