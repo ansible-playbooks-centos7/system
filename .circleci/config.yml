@@ -94,8 +94,8 @@ workflows:
             - ansible-lint
       - molecule-ec2:
           ansible-user: centos
-          aws-ami-id: 'ami-06f0acf3be02f9f64'
-          aws-instance-type: 't4g.medium'
+          aws-ami-id: 'ami-076ed2a63317f5734'
+          aws-instance-type: 't2.medium'
           aws-resource-name: 'circleci_ansible-playbooks_centos_update_centos-stream8'
           aws-vpc-subnet-id: 'subnet-022a704b3061b8b39'
           circleci-timeout: '15m'
